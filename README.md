@@ -31,3 +31,6 @@ Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/ver
 Frontend:
 React + Next.js (App Router)
 Styling/UI: Tailwind CSS + shadcn/ui
+
+Backend: tRPC
+Database: Prisma / Drizzle + PostgreSQL
