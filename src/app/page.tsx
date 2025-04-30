@@ -1,37 +1,34 @@
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
+    <div className="relative min-h-screen bg-slate-900 text-white">
+      <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
+        Headline: What problem does product solve and for whom ; one sentance ;
+        spend 10x less time on product management using xyz
+      </h1>
+      <h2 className="mt-6 max-w-xl text-lg text-zinc-300">
+        subheadline that expands on the headline and adds supporting copy
+      </h2>
+      <div className="mt-8 flex gap-4">
+        <Button variant="default">CTA →</Button>
+        <Button variant="ghost">Read the docs</Button>
+        <div className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1 text-sm text-white ring-1 ring-white/20 backdrop-blur-md">
+          API Studio is now in beta →
+        </div>
+        <div>screenshots or mockup of product</div>
+        <div>
+          social proof : customer logos : social media embeds : customer
+          testimonials
+        </div>
+        <div>link to pricing</div>
+        <div>feature list</div>
+        <div>
+          whitespace is good multiple cta : ensure mobile reaponsiveness and
+          have analytic tracking : never perfect launch with basics and improve
         </div>
       </div>
-    </main>
+    </div>
   );
 }
