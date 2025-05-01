@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -12,7 +11,9 @@ export default function HomePage() {
         subheadline that expands on the headline and adds supporting copy
       </h2>
       <div className="mt-8 flex gap-4">
-        <Button variant="default">CTA →</Button>
+        <Button className="bg-[#7e5ffb]" variant="default">
+          CTA →
+        </Button>
         <Button variant="ghost">Read the docs</Button>
         <div className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1 text-sm text-white ring-1 ring-white/20 backdrop-blur-md">
           API Studio is now in beta →
