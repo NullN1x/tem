@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen bg-slate-900 text-white">
+    <div className="relative min-h-screen bg-[#111827] text-white">
       <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
         Headline: What problem does product solve and for whom ; one sentance ;
         spend 10x less time on product management using xyz
