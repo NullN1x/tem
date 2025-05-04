@@ -1,5 +1,5 @@
 import HeroSection from "@/components/hero-section";
-import { Button } from "@/components/ui/button";
+import LogoCloud from "@/components/logo-cloud";
 
 export default function HomePage() {
   // return (
@@ -33,5 +33,10 @@ export default function HomePage() {
   //     </div>
   //   </div>
   // );
-  return <HeroSection />;
+  return (
+    <>
+      <HeroSection />
+      <LogoCloud />
+    </>
+  );
 }
