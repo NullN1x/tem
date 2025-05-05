@@ -1,5 +1,10 @@
+import CallToAction from "@/components/call-to-action";
+import ContentSection from "@/components/content-1";
+import Features from "@/components/features-1";
+import FooterSection from "@/components/footer";
 import HeroSection from "@/components/hero-section";
 import LogoCloud from "@/components/logo-cloud";
+import Pricing from "@/components/pricing";
 
 export default function HomePage() {
   // return (
@@ -36,7 +41,12 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <Features />
       <LogoCloud />
+      <ContentSection />
+      <Pricing />
+      <CallToAction />
+      <FooterSection />
     </>
   );
 }
