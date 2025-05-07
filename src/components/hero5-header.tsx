@@ -1,11 +1,19 @@
 "use client";
 import Link from "next/link";
-import { Logo } from "./logo";
+import { Logo, LogoIcon, LogoStroke, LogoStroke2 } from "./logo";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "./mode-toggle";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 
 const menuItems = [
   { name: "Features", href: "#link" },
@@ -45,7 +53,7 @@ export const HeroHeader = () => {
                 aria-label="home"
                 className="flex items-center space-x-2"
               >
-                <Logo />
+                <LogoStroke2 />
               </Link>
 
               <button
@@ -89,34 +97,36 @@ export const HeroHeader = () => {
                 </ul>
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <Button
-                  asChild
-                  variant="outline"
-                  size="sm"
-                  className={cn(isScrolled && "lg:hidden")}
-                >
-                  <Link href="#">
-                    <span>Login</span>
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  size="sm"
-                  className={cn(isScrolled && "lg:hidden")}
-                >
-                  <Link href="#">
-                    <span>Sign Up</span>
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  size="sm"
-                  className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
-                >
-                  <Link href="#">
-                    <span>Get Started</span>
-                  </Link>
-                </Button>
+                <SignedOut>
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="sm"
+                    className={cn(isScrolled && "lg:hidden")}
+                  >
+                    <Link href="#">
+                      <span>Login</span>
+                    </Link>
+                  </Button>
+                  <Button
+                    asChild
+                    size="sm"
+                    className={cn(isScrolled && "lg:hidden")}
+                  >
+                    <Link href="#">
+                      <span>Sign Up</span>
+                    </Link>
+                  </Button>
+                  <Button
+                    asChild
+                    size="sm"
+                    className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
+                  >
+                    <Link href="#">
+                      <span>Get Started</span>
+                    </Link>
+                  </Button>
+                </SignedOut>
                 <ModeToggle />
               </div>
             </div>
