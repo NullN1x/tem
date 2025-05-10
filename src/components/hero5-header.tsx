@@ -13,7 +13,10 @@ import {
   SignedIn,
   SignedOut,
   UserButton,
+  useUser,
+  SignOutButton,
 } from "@clerk/nextjs";
+import Image from "next/image";
 
 const menuItems = [
   { name: "Features", href: "#link" },
@@ -25,6 +28,7 @@ const menuItems = [
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const { isLoaded, isSignedIn, user } = useUser();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -97,6 +101,36 @@ export const HeroHeader = () => {
                 </ul>
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+                <SignedIn>
+                  <Link
+                    href="/mealplan"
+                    className="text-gray-700 transition-colors hover:text-emerald-500"
+                  >
+                    Mealplan
+                  </Link>
+                  {/* Profile Picture */}
+                  {user?.imageUrl ? (
+                    <Link href="/profile">
+                      <Image
+                        src={user.imageUrl}
+                        alt="Profile Picture"
+                        width={40}
+                        height={40}
+                        className="rounded-full"
+                      />
+                    </Link>
+                  ) : (
+                    // Placeholder for users without a profile picture
+                    <div className="h-10 w-10 rounded-full bg-gray-300"></div>
+                  )}
+
+                  {/* Sign Out Button */}
+                  <SignOutButton>
+                    <button className="ml-4 rounded bg-emerald-500 px-4 py-2 text-white transition hover:bg-emerald-600">
+                      Sign Out
+                    </button>
+                  </SignOutButton>
+                </SignedIn>
                 <SignedOut>
                   <Button
                     asChild

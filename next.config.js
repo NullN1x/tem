@@ -12,6 +12,12 @@ const config = {
         hostname: "res.cloudinary.com",
         protocol: "https",
       },
+      {
+        protocol: "https",
+        port: "",
+        pathname: "/**",
+        hostname: "img.clerk.com",
+      },
     ],
   },
 };

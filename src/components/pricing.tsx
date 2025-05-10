@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,8 +11,20 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+  useUser,
+  SignOutButton,
+} from "@clerk/nextjs";
 
 export default function Pricing() {
+  const { isLoaded, isSignedIn, user } = useUser();
+
   return (
     <section className="py-16 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
@@ -52,7 +66,9 @@ export default function Pricing() {
 
             <CardFooter className="mt-auto">
               <Button asChild variant="outline" className="w-full">
-                <Link href="">Get Started</Link>
+                <Link href={isSignedIn ? "/subscribe" : "/register"}>
+                  Get Started
+                </Link>
               </Button>
             </CardFooter>
           </Card>
@@ -98,7 +114,9 @@ export default function Pricing() {
 
               <CardFooter>
                 <Button asChild className="w-full">
-                  <Link href="">Get Started</Link>
+                  <Link href={isSignedIn ? "/subscribe" : "/register"}>
+                    Get Started
+                  </Link>
                 </Button>
               </CardFooter>
             </div>
@@ -132,7 +150,9 @@ export default function Pricing() {
 
             <CardFooter className="mt-auto">
               <Button asChild variant="outline" className="w-full">
-                <Link href="">Get Started</Link>
+                <Link href={isSignedIn ? "/subscribe" : "/register"}>
+                  Get Started
+                </Link>
               </Button>
             </CardFooter>
           </Card>
